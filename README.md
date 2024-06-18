@@ -1,75 +1,13 @@
-# Nuxt 3 Minimal Starter
+😺 참여 인원
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+|김혜란(본인)|이유리|신유창|
+|------|---|---|
+|DB설계|DB설계|데이터 가공|
+|프론트엔드|백엔드|백엔드|
+|UI&UX|||
 
-## Setup
+📃 기능명세서 완료 2024.06.11(화)
 
-Make sure to install the dependencies:
+👾 DB 설계 작업 중 2024.06.17 ~
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+🕹️ 개발 시작 2024.06.24(월)
