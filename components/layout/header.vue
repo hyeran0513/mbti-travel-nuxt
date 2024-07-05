@@ -22,7 +22,7 @@
   const gnb = ref([
     {
       TEXT: '여행지 찾기',
-      LINK: '/'
+      LINK: '/destination'
     },
     {
       TEXT: '동행자 찾기',
