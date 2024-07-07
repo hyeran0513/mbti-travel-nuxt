@@ -11,7 +11,7 @@
     <div class="right-area">
       <div class="list">
         <div class="list-item" v-for="(item, i) in 4" :key="i">
-          <NuxtLink to="/">
+          <NuxtLink to="/destination/1">
             <div class="thumb">
               <div class="thumb-img"></div>
             </div>

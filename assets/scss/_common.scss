@@ -333,3 +333,57 @@ select {
   }
 }
 /* END: 탭 */
+
+/* textarea 커스텀 */
+.textarea-custom {
+  padding: 20px;
+  width: 100%;
+  height: 150px;
+  border: 1px solid #d7d7d7;
+  border-radius: 10px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--colorBg2);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-track-piece {
+    background-color: #eee;
+    border-radius: 3px;
+  }
+}
+/* END: textarea 커스텀 */
+
+/* 툴팁 */
+.tooltip {
+  position: relative;
+
+  &-box {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 10;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    background: #FFF;
+    min-width: 100px;
+  }
+
+  &-list {
+    .item {
+      padding: 8px 10px;
+      transition: all ease .2s;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+/* END: 툴팁 */

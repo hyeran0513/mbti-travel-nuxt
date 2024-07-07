@@ -5,7 +5,9 @@
         :slidesPerView="1"
         :spaceBetween="30"
         :navigation="{ nextEl: '.swiper-banner-next', prevEl: '.swiper-banner-prev' }"
-        :pagination="{ clickable: true }"
+        :pagination="{
+          type: 'fraction'
+        }"
         :autoplay="{ delay: 2500, disableOnInteraction: false }"
         :modules="[Navigation, Pagination, Autoplay]">
         <swiper-slide v-for="i in 5" :key="i" class="companion">
