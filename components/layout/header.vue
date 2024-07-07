@@ -21,12 +21,12 @@
 <script setup>
   const gnb = ref([
     {
-      TEXT: '여행지 찾기',
-      LINK: '/destination'
+      TEXT: '동행자 찾기',
+      LINK: '/companion'
     },
     {
-      TEXT: '동행자 찾기',
-      LINK: '/'
+      TEXT: '여행지 찾기',
+      LINK: '/destination'
     },
     {
       TEXT: '여행코스',

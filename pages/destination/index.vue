@@ -129,7 +129,7 @@ section {
             flex: 1;
 
             &-title {
-              font-size: 18px;
+              font-size: 20px;
               font-weight: bold;
               transition: all ease .3s;
             }
@@ -137,6 +137,11 @@ section {
             &-location {
               & > i {
                 margin-right: 4px;
+                font-size: 14px;
+              }
+
+              .txt {
+                font-size: 14px;
               }
             }
 
