@@ -118,9 +118,9 @@ section {
     flex: 1;
 
     .list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
 
       &-item {
         width: 100%;
@@ -133,8 +133,14 @@ section {
           }
         }
 
+        & > a {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+
         .thumb {
-          width: 100%;
+          width: 340px;
           height: 200px;
           border-radius: 12px;
           overflow: hidden;
@@ -164,8 +170,6 @@ section {
         }
 
         .info {
-          padding-top: 20px;
-
           &-title {
             font-size: 20px;
             font-weight: bold;
@@ -204,6 +208,7 @@ section {
               display: flex;
               align-items: center;
               gap: 10px;
+              font-size: 14px;
             }
           }
 

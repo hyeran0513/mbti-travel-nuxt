@@ -126,7 +126,7 @@ section {
               position: relative;
               width: 100%;
               height: 100%;
-              background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+              background: #eee;
 
               &:before {
                 position: absolute;
