@@ -11,8 +11,12 @@
           <swiper-slide v-for="i in 5" :key="i" class="companion">
             <div class="item">
               <NuxtLink to="/">
-                <div class="thumb">
-                  <div class="thumb-img"></div>
+                <div class="top">
+                  <div class="thumb">
+                    <div class="thumb-img"></div>
+                  </div>
+
+                  <div class="period">1박 2일</div>
                 </div>
 
                 <div class="info">
@@ -22,8 +26,6 @@
                     <i class="icon-fill-pin" />
                     <span class="txt">위치</span>
                   </div>
-
-                  <div class="info-period">1박 2일</div>
                 </div>
               </NuxtLink>
             </div>
@@ -61,11 +63,6 @@ import 'swiper/css/navigation';
       .swiper {
         .item {
           position: relative;
-          border-radius: 12px;
-          border-left: 1px solid #d7d7d7;
-          border-right: 1px solid #d7d7d7;
-          border-bottom: 1px solid #d7d7d7;
-          overflow: hidden;
 
           &:hover {
             .info {
@@ -75,19 +72,36 @@ import 'swiper/css/navigation';
             }
           }
 
-          .thumb {
-            width: 100%;
-            height: 200px;
+          .top {
+            position: relative;
 
-            &-img {
+            .thumb {
               width: 100%;
-              height: 100%;
-              background: #d7d7d7;
+              height: 200px;    
+              border-radius: 12px;
+              overflow: hidden;
+
+              &-img {
+                width: 100%;
+                height: 100%;
+                background: #d7d7d7;
+              }
+            }
+
+            .period {
+              position: absolute;
+              top: 150px;
+              right: 20px;
+              display: inline-block;
+              padding: 4px 14px;
+              color: #FFF;
+              background: var(--primary-color);
+              border-radius: 4px 14px;
             }
           }
 
           .info {
-            padding: 20px 30px;
+            padding-top: 20px;
 
             &-title {
               font-size: 18px;
@@ -99,17 +113,6 @@ import 'swiper/css/navigation';
               & > i {
                 margin-right: 4px;
               }
-            }
-
-            &-period {
-              position: absolute;
-              top: 150px;
-              right: 20px;
-              display: inline-block;
-              padding: 4px 14px;
-              color: #FFF;
-              background: var(--primary-color);
-              border-radius: 4px 14px;
             }
           }
         }

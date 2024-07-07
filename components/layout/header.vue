@@ -30,7 +30,7 @@
     },
     {
       TEXT: '여행코스',
-      LINK: '/'
+      LINK: '/course'
     }
   ]);
 </script>
