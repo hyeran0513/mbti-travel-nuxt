@@ -1,143 +1,178 @@
 <template>
-  <div class="swiper-area">
-    <swiper
-      :style="{
-        '--swiper-navigation-color': '#fff',
-        '--swiper-pagination-color': '#fff',
-      }"
-      :spaceBetween="10"
-      :navigation="true"
-      :thumbs="{ swiper: thumbsSwiper }"
-      :modules="modules"
-      class="mySwiper2"
-    >
-      <swiper-slide v-for="(image, index) in images" :key="'main-' + index">
-        <img :src="image" />
-      </swiper-slide>
-    </swiper>
-    <swiper
-      @swiper="setThumbsSwiper"
-      :loop="true"
-      :spaceBetween="10"
-      :slidesPerView="10"
-      :freeMode="true"
-      :watchSlidesProgress="true"
-      :modules="modules"
-      class="mySwiper"
-    >
-      <swiper-slide v-for="(image, index) in images" :key="'thumb-' + index">
-        <img :src="image" />
-      </swiper-slide>
-    </swiper>
+  <div class="section-area">
+    <section class="section-thumb">
+      <div class="img-wrap">
+        <div class="img1">
+          <div class="item"></div>
+        </div>
+
+        <div class="img2">
+          <div class="item"></div>
+        </div>
+
+        <div class="img3">
+          <div class="item"></div>
+        </div>
+
+        <div class="img4">
+          <div class="item"></div>
+        </div>
+
+        <div class="img5">
+          <div class="item"></div>
+        </div>
+      </div>
+
+      <button type="button" class="btn-all-img" @click="modal.modalOpen()">사진 모두 보기</button>
+    </section>
+
+    <section class="section-title">
+      <div class="title">여행지명</div>
+
+      <div class="count">
+        <dl class="count-item comment">
+          <dt>댓글</dt>
+          <dd>10</dd>
+        </dl>
+
+        <dl class="count-item view">
+          <dt>조회수</dt>
+          <dd>10</dd>
+        </dl>
+
+        <dl class="count-item like">
+          <dt>좋아요</dt>
+          <dd>10</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section-detail">
+      <p class="title">상세정보</p>
+
+      <div class="cont">상세</div>
+    </section>
+
+    <section class="section-comment">
+      <p class="title">댓글</p>
+
+      <div class="cont">
+        <CommonCommentForm />
+        <CommonCommentList />
+      </div>
+    </section>
   </div>
+
+  <DestinationModal ref="modal" />
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
-
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-
-const thumbsSwiper = ref(null);
-
-const setThumbsSwiper = (swiper) => {
-  thumbsSwiper.value = swiper;
-};
-
-const images = [
-  'https://swiperjs.com/demos/images/nature-2.jpg',
-  'https://swiperjs.com/demos/images/nature-3.jpg',
-  'https://swiperjs.com/demos/images/nature-4.jpg',
-  'https://swiperjs.com/demos/images/nature-5.jpg',
-  'https://swiperjs.com/demos/images/nature-6.jpg',
-  'https://swiperjs.com/demos/images/nature-7.jpg',
-  'https://swiperjs.com/demos/images/nature-9.jpg',
-  'https://swiperjs.com/demos/images/nature-10.jpg',
-  'https://swiperjs.com/demos/images/nature-9.jpg',
-  'https://swiperjs.com/demos/images/nature-10.jpg',
-];
-
-const modules = [FreeMode, Navigation, Thumbs];
+const modal = ref();
 </script>
 
 <style lang="scss" scoped>
-.swiper-area {
-  margin: 0 auto;
-  max-width: 1920px;
-  height: 500px;
-}
+  .section-area {
+    .section {
+      &-thumb {
+        position: relative;
+        margin: 0 auto;
+        max-width: 1200px;
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
+        .img-wrap {
+          max-width: 1200px;
+          display: grid;
+          grid-auto-flow: column;
+          gap: 8px;
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
+          .img1 {
+            grid-row: span 2 / span 2;
+            position: relative;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+            .item {
+              height: 512px;
+              width: 640px;
+              background: #f8f8f8;
+              border-radius: 12px;
+            }
+          }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+          .img2, .img3, .img4, .img5 {
+            grid-column: span 1 / span 1;
+            position: relative;
 
-.swiper {
-  width: 100%;
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
+            .item {
+              height: 252px;
+              width: 272px;
+              background: #f8f8f8;
+              border-radius: 12px;
+            }
+          }
+        }
 
-.swiper-slide {
-  background-size: cover;
-  background-position: center;
-}
+        .btn-all-img {
+          position: absolute;
+          bottom: 30px;
+          right: 30px;
 
-.mySwiper2 {
-  height: 80%;
-  width: 100%;
-}
+          display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 400px;
+    font-size: 0.875rem;
+    line-height: normal;
+    letter-spacing: 0px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.24);
+    cursor: pointer;
+    padding: 12px 16px 12px 14px;
+    background-color: rgb(255, 255, 255);
+        }
+      }
+      
+      &-title {
+        margin: 50px auto 0;
+        max-width: 1200px;
 
-.mySwiper {
-  margin-top: 20px;
-  height: 20%;
-  box-sizing: border-box;
-  padding: 10px 0;
-  
+        .title {
+          font-size: 2rem;
+          font-weight: bold;
+        }
 
-  .swiper-slide {
-    img {
-      border-radius: 12px;
+        .count {
+          display: flex;
+          gap: 10px;
+
+          &-item {
+            display: flex;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      &-detail {
+        margin: 50px auto 0;
+        max-width: 1200px;
+
+        & > .title {
+          margin-bottom: 20px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+
+      &-comment {
+        margin: 50px auto 0;
+        max-width: 1200px;
+
+        & > .title {
+          margin-bottom: 20px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
     }
   }
-}
-
-.mySwiper .swiper-slide {
-  width: 25%;
-  height: 100%;
-  opacity: 0.4;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 </style>
