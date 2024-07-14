@@ -10,6 +10,15 @@ export default defineNuxtConfig({
       },
     },
   },
+  nitro: {
+    routeRules: {
+      "api/**": {
+        proxy: {
+          to: "http://localhost:8080/**"
+        }
+      }
+    },
+  },
   css : [
     "@/assets/scss/main.scss"
   ],
